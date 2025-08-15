@@ -36,7 +36,7 @@ export default function MusicPlayer() {
         />
       </button>
       <audio ref={audioRef} loop preload="metadata">
-        <source src="/placeholder-wedding-song.mp3" type="audio/mpeg" />
+        <source src="/wedding-song.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
     </div>

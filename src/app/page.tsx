@@ -80,7 +80,6 @@ export default function Home() {
   return (
     <div className="overflow-hidden w-full">
       <div className="relative h-dvh w-full overflow-hidden">
-        {/* Background video (with image poster) */}
         <video
           autoPlay
           muted
@@ -90,13 +89,9 @@ export default function Home() {
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/wedding-video.mp4" type="video/mp4" />
-          {/* Optional: tiny fallback for very old browsers */}
         </video>
-
-        {/* If you prefer to force an image fallback, comment out the <video> and use this: */}
         {/* <Image src="/video.jpg" alt="Wedding background" fill className="object-cover" priority /> */}
 
-        {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/30" />
         <MusicPlayer />
 
@@ -109,7 +104,7 @@ export default function Home() {
             </div>
             <div>
               <h1
-                className={`text-6xl md:text-6xl lg:text-7xl tracking-wider ${lavender.className}`}
+                className={`text-5xl md:text-6xl lg:text-7xl tracking-wider ${lavender.className}`}
               >
                 Adlil & Arina
               </h1>
@@ -311,7 +306,7 @@ export default function Home() {
           </div>
           <div>
             <h2
-              className={`text-2xl mt-4 font-semibold text-[#932434] ${ttRamillas.className}`}
+              className={`text-2xl mt-4 text-center font-semibold text-[#932434] ${ttRamillas.className}`}
             >
               Ждём Вас с нетерпением!
             </h2>
