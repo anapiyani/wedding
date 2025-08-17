@@ -61,6 +61,32 @@ export default function Home() {
     seconds: 0,
   });
 
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(true);
+
+  const carouselItems = [
+    { type: "video", src: "/wedding-video.mp4" },
+    { type: "image", src: "/1.jpg" },
+    { type: "image", src: "/2.jpg" },
+    { type: "image", src: "/3.jpg" },
+    { type: "image", src: "/4.jpg" },
+    { type: "image", src: "/5.jpg" },
+    { type: "image", src: "/6.jpg" },
+    { type: "image", src: "/7.jpg" },
+  ];
+
+  useEffect(() => {
+    const carouselTimer = setInterval(() => {
+      setCurrentSlide((prev) => {
+        const nextSlide = (prev + 1) % carouselItems.length;
+        setIsVideoPlaying(nextSlide === 0);
+        return nextSlide;
+      });
+    }, 50000);
+
+    return () => clearInterval(carouselTimer);
+  }, []);
+
   useEffect(() => {
     const timer = setInterval(() => {
       const now = new Date();
@@ -80,20 +106,54 @@ export default function Home() {
   return (
     <div className="overflow-hidden w-full">
       <div className="relative h-dvh w-full overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/video.jpg"
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/wedding-video.mp4" type="video/mp4" />
-        </video>
-        {/* <Image src="/video.jpg" alt="Wedding background" fill className="object-cover" priority /> */}
+        {carouselItems.map((item, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            {item.type === "video" ? (
+              <video
+                autoPlay={index === currentSlide}
+                muted
+                playsInline
+                poster="/video.jpg"
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src={item.src} type="video/mp4" />
+              </video>
+            ) : (
+              <Image
+                src={item.src || "/placeholder.svg"}
+                alt={`Wedding carousel ${index}`}
+                fill
+                className="object-cover"
+                priority={index <= 2}
+              />
+            )}
+          </div>
+        ))}
 
         <div className="absolute inset-0 bg-black/30" />
         <MusicPlayer />
+
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {carouselItems.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                setCurrentSlide(index);
+                setIsVideoPlaying(index === 0);
+              }}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentSlide
+                  ? "bg-white scale-125"
+                  : "bg-white/50 hover:bg-white/75"
+              }`}
+            />
+          ))}
+        </div>
 
         <main className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-center text-white top-[250px]">
           <div className="max-w-4xl mx-auto space-y-2">
@@ -177,14 +237,14 @@ export default function Home() {
               className={`mt-5 space-y-2 text-center leading-relaxed ${gilroy.className}`}
             >
               <div>Город Петропавловск</div>
-              <div>Улица Сарайшық, дом 13</div>
+              <div>Улица Нурсултана Назарбаева, 248а</div>
               <div className="mx-auto h-px w-40 bg-black/20" />
-              <div>Банкетный зал “Арай”</div>
+              <div>Банкетный зал "Royal Palace"</div>
             </div>
 
             <div className="mt-6 flex justify-center">
               <a
-                href="https://2gis.kz/astana/firm/70000001058967068?m=71.435522%2C51.1346%2F16"
+                href="https://go.2gis.com/1RnZ4"
                 target="_blank"
                 rel="noreferrer"
                 className={`inline-flex items-center rounded-full absolute bg-black/80 px-5 py-3 text-white transition hover:bg-black/90 ${gilroy.className} w-[230px] text-center justify-center`}
@@ -200,7 +260,7 @@ export default function Home() {
             <h1
               className={`text-4xl text-white font-light ${ttRamillasLight.className}`}
             >
-              18:00
+              17:00
             </h1>
           </div>
         </div>
