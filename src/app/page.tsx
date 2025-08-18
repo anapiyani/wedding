@@ -239,7 +239,7 @@ export default function Home() {
               <div>Город Петропавловск</div>
               <div>Улица Нурсултана Назарбаева, 248а</div>
               <div className="mx-auto h-px w-40 bg-black/20" />
-              <div>Банкетный зал "Royal Palace"</div>
+              <div>Банкетный зал Royal Palace</div>
             </div>
 
             <div className="mt-6 flex justify-center">
