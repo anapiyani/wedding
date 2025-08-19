@@ -166,7 +166,7 @@ export default function Home() {
               <h1
                 className={`text-5xl md:text-6xl lg:text-7xl tracking-wider ${lavender.className}`}
               >
-                Adlil & Arina
+                Adil & Arina
               </h1>
             </div>
           </div>
