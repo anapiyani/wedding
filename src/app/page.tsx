@@ -53,7 +53,7 @@ const ttRamillasLight = localFont({
 });
 
 export default function Home() {
-  const targetDate = new Date("2025-11-15T18:00:00+05:00");
+  const targetDate = new Date("2026-04-24T18:00:00+05:00");
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -237,14 +237,14 @@ export default function Home() {
               className={`mt-5 space-y-2 text-center leading-relaxed ${gilroy.className}`}
             >
               <div>Город Петропавловск</div>
-              <div>Улица Нурсултана Назарбаева, 248а</div>
+              <div>Улица Конституции Казахстана, 41</div>
               <div className="mx-auto h-px w-40 bg-black/20" />
-              <div>Банкетный зал Royal Palace</div>
+              <div>Brown Street</div>
             </div>
 
             <div className="mt-6 flex justify-center">
               <a
-                href="https://go.2gis.com/1RnZ4"
+                href="https://2gis.kz/petropavlovsk/geo/70000001057458735"
                 target="_blank"
                 rel="noreferrer"
                 className={`inline-flex items-center rounded-full absolute bg-black/80 px-5 py-3 text-white transition hover:bg-black/90 ${gilroy.className} w-[230px] text-center justify-center`}
@@ -266,53 +266,7 @@ export default function Home() {
         </div>
       </div>
       <div className="relative py-16 bg-white overflow-hidden">
-        <div className="w-full h-[100px] absolute -top-40">
-          <Image
-            src="/dressCodeText.svg"
-            className="w-full h-auto lg:hidden md:hidden"
-            alt="text"
-            width={430}
-            height={400}
-          />
-        </div>
-        <div className="w-full h-[100px] absolute -top-15">
-          <Image
-            src="/dressCodeText.svg"
-            className="w-full h-auto lg:hidden md:hidden"
-            alt="text"
-            width={430}
-            height={400}
-          />
-        </div>
-
         <div className="relative z-10 flex flex-col items-center">
-          <div className="max-w-sm mb-6">
-            <Image
-              src="/dressCodeExample.svg"
-              alt="Dress Code Black Tie"
-              width={400}
-              height={400}
-              className="w-full h-auto"
-            />
-          </div>
-          <div className="text-center max-w-[320px]">
-            <h2 className={`text-xl font-semibold ${ttRamillas.className}`}>
-              Стиль нашего вечера - Black Tie
-            </h2>
-            <p className={`mt-3 text-black ${gilroy.className}`}>
-              Просим гостей соблюдать элегантность и выбрать наряд в черной
-              цветовой гамме. Классика — всегда в моде.
-            </p>
-          </div>
-          <div className="w-full h-[160px]">
-            <Image
-              src="/dressCodeText.svg"
-              alt="text"
-              width={430}
-              className="w-full h-auto lg:hidden md:hidden"
-              height={400}
-            />
-          </div>
           <div className="mt-10 flex justify-center items-center flex-col">
             <h3 className={`text-3xl mb-4 ${ttRamillas.className}`}>
               ДО ТОРЖЕСТВА:
