@@ -160,7 +160,7 @@ export default function Home() {
             <div
               className={`text-xl md:text-xl tracking-wider ${ttModernoir.className}`}
             >
-              15 НОЯБРЬ 2025
+              24 АПРЕЛЯ 2026
             </div>
             <div>
               <h1
