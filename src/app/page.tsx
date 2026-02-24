@@ -196,7 +196,7 @@ export default function Home() {
           </div>
           <div className="w-full h-full mt-8">
             <Image
-              src={"/Date.svg"}
+              src={"/Date.png"}
               alt={"handle"}
               className="object-cover w-full h-auto"
               width={100}
