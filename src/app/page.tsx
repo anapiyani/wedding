@@ -196,7 +196,7 @@ export default function Home() {
           </div>
           <div className="w-full h-full mt-8">
             <Image
-              src={"/Date.png"}
+              src={"/Date.svg"}
               alt={"handle"}
               className="object-cover w-full h-auto"
               width={100}
@@ -260,7 +260,7 @@ export default function Home() {
             <h1
               className={`text-4xl text-white font-light ${ttRamillasLight.className}`}
             >
-              17:00
+              16:00
             </h1>
           </div>
         </div>
